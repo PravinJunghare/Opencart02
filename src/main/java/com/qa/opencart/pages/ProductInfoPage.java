@@ -13,9 +13,9 @@ import com.qa.opencart.utils.ElementUtil;
 import static com.qa.opencart.constant.AppConstant.*;
 
 public class ProductInfoPage {
-	private WebDriver driver;
 
-private ElementUtil eleUtil;
+	private WebDriver driver;
+	private ElementUtil eleUtil;
 	
 	private By productHeader = By.tagName("h1");
 	private By ProductImages = By.cssSelector("ul.thumbnails img");
