@@ -27,8 +27,7 @@ public class BaseTest {
 	protected SearchResultPage searchPage;
 	protected ProductInfoPage productInfoPage;
 	protected SoftAssert softAssert;
-	// protected RegistrationPage registrationPage;
-
+	protected RegisterPage registerPage;
 	@BeforeTest
 	public void setUp() {
 		df = new Driverfactory();// created driver factory object
