@@ -18,7 +18,7 @@ public class BaseTest {
 
 	Driverfactory df;
 	WebDriver driver;
-	protected Properties prop;
+	public Properties prop;
 
 	
 

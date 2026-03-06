@@ -18,21 +18,23 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.qa.opencart.factory.Driverfactory;
+
 public class ElementUtil {
 
 	private WebDriver driver;
-	//private JavaScriptUtil jsUtil;
+	private JavaScriptUtil jsUtil;
 
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
-		//jsUtil = new JavaScriptUtil(driver);
+		jsUtil = new JavaScriptUtil(driver);
 	}
 
 	public WebElement getElement(By locator) {
 		WebElement element = driver.findElement(locator);
-		//if (Boolean.parseBoolean(Driverfactory.highlight)) {
-		//	jsUtil.flash(element);
-		//}
+		if (Boolean.parseBoolean(Driverfactory.isHighlight)) {
+			jsUtil.flash(element);
+		}
 		return element;
 	}
 
@@ -206,9 +208,7 @@ public class ElementUtil {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		try {
 			return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
-		}
-		catch(org.openqa.selenium.TimeoutException  e)
-		{
+		} catch (org.openqa.selenium.TimeoutException e) {
 			return Collections.EMPTY_LIST;
 		}
 	}
