@@ -10,7 +10,7 @@ import com.qa.opencart.pages.AccountsPage;
 
 public class LoginPageTest extends BaseTest {
 
-	@Test(priority = 1)
+	@Test(priority = 1, enabled = true) // enabled = false ---- >Not to run that test case
 	public void loginPageTitleTest() {
 		String actTitle = loginPage.getLoginPageTitle();
 		// Assert.assertEquals(actTitle, "Account Login");
