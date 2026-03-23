@@ -3,6 +3,7 @@ package com.qa.opencart.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.base.BaseTest;
 import static com.qa.opencart.constant.AppConstant.*;// Static Import:To remove Writing AppConstant. each time
 
@@ -14,12 +15,14 @@ public class LoginPageTest extends BaseTest {
 	public void loginPageTitleTest() {
 		String actTitle = loginPage.getLoginPageTitle();
 		// Assert.assertEquals(actTitle, "Account Login");
+		 ChainTestListener.log("Checking LoginPage Title");
 		Assert.assertEquals(actTitle, LOGIN_PAGE_TITLE_VALUE);
 	}
 
 	@Test(priority = 2)
 	public void loginPageUrlTest() {
 		String actUrl = loginPage.getLoginUrl();
+		 ChainTestListener.log("Checking LoginPage Url");
 		Assert.assertTrue(actUrl.contains(LOGIN_PAGE_URL_FRACTION_VALUE));
 
 	}
