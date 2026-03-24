@@ -140,14 +140,16 @@ public class Driverfactory {
 		return srcFile;
 	}
 
-	public static byte[] getScreenshotByte() {
-		return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);// temp dir
-
-	}
-
-	public static String getScreenshotBase64() {
-		return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BASE64);// temp dir
-
-	}
+	/*
+	 * public static byte[] getScreenshotByte() { return ((TakesScreenshot)
+	 * getDriver()).getScreenshotAs(OutputType.BYTES);// temp dir
+	 * 
+	 * }
+	 * 
+	 * public static String getScreenshotBase64() { return ((TakesScreenshot)
+	 * getDriver()).getScreenshotAs(OutputType.BASE64);// temp dir
+	 * 
+	 * }
+	 */
 
 }
