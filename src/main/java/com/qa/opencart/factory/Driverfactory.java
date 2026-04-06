@@ -17,6 +17,8 @@ import com.aventstack.chaintest.plugins.ChainTestListener;
 import com.qa.opencart.exception.BrowserException;
 import com.qa.opencart.exception.FrameworkException;
 
+import jdk.internal.org.jline.utils.Log;
+
 public class Driverfactory {
 	public WebDriver driver;
 	public Properties prop;
@@ -36,7 +38,9 @@ public class Driverfactory {
 		ChainTestListener.log("Properties used :" + prop.toString());
 
 		String browserName = prop.getProperty("browser").trim();
-		System.out.println("browsername is :" + browserName);
+		// System.out.println("browsername is :" + browserName);
+		
+		
 		optionManger = new OptionsManager(prop);
 		isHighlight = prop.getProperty("highlight");
 
@@ -97,6 +101,7 @@ public class Driverfactory {
 		try {
 			if (envName == null) {
 				System.err.println("env is null ,hence running on QA env");
+			//	Log.error("env is null ,hence running on QA env");
 				ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
 
 			} else {
@@ -114,7 +119,8 @@ public class Driverfactory {
 					break;
 
 				default:
-					throw new FrameworkException("==INVALID ENVIRONMENT NAME :" + envName);
+					//throw new FrameworkException("==INVALID ENVIRONMENT NAME :" + envName);
+					Log.error("==INVALID ENVIRONMENT NAME :" + envName);
 				}
 
 			}
