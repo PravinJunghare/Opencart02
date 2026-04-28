@@ -35,7 +35,7 @@ public class AccountsPage {
 	public String getAccPageTitle() {
 		// String title = driver.getTitle();
 		String title = eleUtil.waitForTitleIsAndFetch(DEFAULT_MEDIUM_TIMEOUT, ACCOUNTS_PAGE_TITLE_VALUE);
-		System.out.println("Accountpage title is:" + title);
+		System.out.println("Accountpage Title is:" + title);
 		return title;
 	}
 
